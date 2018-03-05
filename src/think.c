@@ -8,12 +8,12 @@
 #include "philosopher.h"
 #include "extern.h"
 
-int		think(t_philosopher *ptr)
+void		think(t_philosopher *ptr)
 {
 	pthread_mutex_lock(&ptr->_mutex);
 	lphilo_take_chopstick(&ptr->_mutex);
 	lphilo_think();
 	lphilo_release_chopstick(&ptr->_mutex);
 	pthread_mutex_unlock(&ptr->_mutex);
-	return (0);
+	usleep(rand() % 50 + 50);
 }

@@ -17,11 +17,13 @@ int			main(int ac, char **av)
 		return (84);
 	if (parser(ac, av) == -1)
 		return (-1);
-	if ((ptr = create_philosophe(av)) == NULL)
-		return (-1);
-	error = execution(ptr);
-	if (error != 0)
-		return (84);
+	if (parser(ac, av) != 2) {
+		if ((ptr = create_philosophe(av)) == NULL)
+			return (-1);
+		error = execution(ptr);
+		if (error != 0)
+			return (84);
+	}
 	RCFCleanup();
 	return (0);
 }

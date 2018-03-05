@@ -21,7 +21,7 @@ t_philosopher	*init_philosophe(char **av, t_philosopher *ptr)
 	while (i < nb_philosophes) {
 		ptr[i].nb_philosophes = nb_philosophes;
 		ptr[i].nb_meals = nb_meals;
-		ptr[i].nb_ricebowl = nb_meals;
+		ptr[i].nb_ricebowl = nb_philosophes;
 		ptr[i].position = i;
 		if (pthread_mutex_init(&ptr[i]._mutex, NULL) != 0) {
 			return (NULL);

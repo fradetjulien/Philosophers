@@ -26,5 +26,8 @@ int		parser(int ac, char **av)
 		flag_help(av[0]);
 		return (-1);
 	}
+	if (atoi(av[2]) == 0 ||
+	    atoi(av[2]) == 1)
+		return (2);
 	return (0);
 }
